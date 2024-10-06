@@ -1,4 +1,4 @@
-<h1>Solution Description</h1>
+Solution Description
 
 The traditional method of analysis of extraterrestrial seismic activity is to use the  STA/LTA(Short term- Long term algorithm).
 The problem with it is that is generates a large amount of data that is quite difficult to handle, process, analyze and transfer. ​
@@ -12,3 +12,11 @@ Then we extract the relevant features like max velocity, frequency weighted velo
 This allows analyzation of only the worthy data.​
 Now as the data can contain rare cases of seismic events like shallow quakes, we approached the problem using a random forest classifier and fine-tuned it using boosting.
 
+Working
+
+files:
+1.) Moonquakes.csv - This is our custom training data(Data generated after preprocessing and feature engineering from NASA apollo data)
+2.) moonquake_model.joblib - Ml model used, based on random forest classifier
+3.) Training and prepration code.ipynb - Model training source code
+4.) Test.mseed - testfile used 
+5.) Testcaseandinputprocess.ipynb - Final code having the function to preprocess test files and predict the class of moonquake.
