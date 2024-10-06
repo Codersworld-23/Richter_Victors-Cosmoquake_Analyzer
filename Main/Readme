@@ -1,0 +1,12 @@
+The traditional method of analysis of extraterrestrial seismic activity is to use the  STA/LTA(Short term- Long term algorithm).
+The problem with it is that is generates a large amount of data that is quite difficult to handle, process, analyze and transfer. ​
+The cosmoquake analyzer  algorithm solves this problem by taking a unique approach. 
+It first of all finds out the arrival time and extent of aftershock waves of the given seismic data using the traditional STA/LTA approach and then  takes the data between these events only. ​
+Then it applies Fourier transform upon the data and generates the absolute values of velocities and corresponding frequencies. 
+The negative frequency values are dropped out to get only the relevant part of the data. ​
+This gives us the distribution of velocities over frequency and also provides us an estimate of the strength of the quake. 
+This is because the strength of quake depends on both the amplitudes and frequencies. 
+Then we extract the relevant features like max velocity, frequency weighted velocity, mean velocity, frequency of max amplitude and area under curve. ​
+This allows analyzation of only the worthy data.​
+Now as the data can contain rare cases of seismic events like shallow quakes, we approached the problem using a random forest classifier and fine-tuned it using boosting.
+
