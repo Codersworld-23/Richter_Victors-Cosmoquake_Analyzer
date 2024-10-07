@@ -40,6 +40,9 @@ The key innovations of the Cosmoquake Analyzer include:
 3. **Using the Aftershock waves**: The aftershock waves of a seismic event give a lot of information of planetary signature and impact of the event on the given celestial body. For example a meteor hit, on the Moon shall be more significant as a seismic event than on the Mars. We used them to calculate the strength of the quake.
 
 
+   ![image](https://github.com/user-attachments/assets/4675350c-c3cc-4332-80aa-3d799922516d)
+
+   
 # Repository Flow
 ## Resources folder
 It is added for reference of the resources provided in the problem, though lunar data could not be uploaded due to file size constraints.
