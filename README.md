@@ -25,9 +25,19 @@ The identification and classification of seismic events are crucial for understa
 
 The key innovations of the Cosmoquake Analyzer include:
 
-1. **Data reduction**: Traditional methods generate overwhelming amounts of data. We reduce this by focusing only on the data between seismic events and applying a Fourier transform to extract relevant features. The data size can be reduced from 1.38GB to mere kilobytes.
+1. **Data reduction and Feature Engineering**: Traditional methods generate overwhelming amounts of data. We reduce this by focusing only on the data between seismic events and applying a fast Fourier transform and consecutive feature engineering to extract relevant features. The data size can be reduced from 1.38GB to mere 9.06 kilobytes which is reduction of data to about 0.000613% of the original. This facilitates easy transfer of data which was a key challenge.
    
 2. **Random Forest Classifier with boosting**: Unlike typical seismic analysis approaches that rely on complex models, we use a Random Forest Classifier, which is simpler but still powerful when combined with boosting techniques. This approach ensures the classification of seismic events, including rare shallow quakes, with high accuracy.
+   
+- It does not assume any data distribution and can handle non-linearity effectively.
+- The bootstrapping allows sufficient training over rare examples.
+- It is resilient to over-fitting.
+- Does fast predictions in O(logn) time.
+- It is easy to store and deploy.
+- It can do feature selection on its own, eliminating any irrelevant statistical fallacy on its own.
+- This does not consume a lot of computational power and energy like artificial neural networks which is limited for extraterrestrial systems which have to work in harsh environment.
+
+3. **Using the Aftershock waves**: The aftershock waves of a seismic event give a lot of information of planetary signature and impact of the event on the given celestial body. For example a meteor hit, on the Moon shall be more significant as a seismic event than on the Mars. We used them to calculate the strength of the quake.
 
 
 # Repository Flow
@@ -64,3 +74,8 @@ The algorithm uses the following steps:
 2. **Fourier Transform**: Converts seismic data into the frequency domain, discarding irrelevant negative frequencies and keeping only the useful data.
 3. **Feature Extraction**: Key features such as max velocity, frequency-weighted velocity, mean velocity, and area under the curve are extracted to reduce data size.
 4. **Classification**: A Random Forest Classifier with boosting is used to classify the seismic events, with a focus on rare cases like shallow quakes.
+
+## Possible future additions:
+1. Integration of a seismic wave measuremnt based activation function into the nodes of decision tree, and customisation of it.
+2. Solving the epicenter location problem. As we can't know the epicenters of the seismic events easily on the celestial body, the true magnitude cannot be assesed. It can be done in future using a satellite monitoring system integrated to provide data of distance from epicenter to detector. Then the logarithm of this distance can be used to get the true assesment of strength on standard scale.
+
