@@ -1,5 +1,3 @@
-<h1> Solution Description</h1>
-
 # Cosmoquake Analyzer Algorithm
 
 The **Cosmoquake Analyzer Algorithm** is an innovative approach for analyzing extraterrestrial seismic activity. It addresses the limitations of traditional STA/LTA (Short Term - Long Term) algorithms by significantly reducing the data size, improving feature extraction, and enhancing the classification of rare seismic events like shallow quakes. The solution applies both signal processing and machine learning techniques to tackle this challenge, making seismic event analysis faster and more efficient.
@@ -31,29 +29,25 @@ The key innovations of the Cosmoquake Analyzer include:
    
 2. **Random Forest Classifier with boosting**: Unlike typical seismic analysis approaches that rely on complex models, we use a Random Forest Classifier, which is simpler but still powerful when combined with boosting techniques. This approach ensures the classification of seismic events, including rare shallow quakes, with high accuracy.
 
-## Installation
 
-To run this project locally:
+# Repositry Flow
+## Resources folder
+It is added for refrence of the resources provided in the problem, though lunar data could not be uploaded due to file size constraints.
+## Main folder
+This holds our actuall solution and is its usage is as follows :
+### Files
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/username/cosmoquake-analyzer.git
-    ```
+- `Moonquakes.csv`: Sample custom training data generated from NASA's Apollo mission data (post feature engineering).
+- `moonquake_model.joblib`: Pretrained Random Forest Classifier model.
+- `Training and preparation code.ipynb`: Notebook containing the source code for training the model.
+- `Testcaseandinputprocess.ipynb`: Notebook containing the final code for testing and predicting seismic events using preprocessed test files.
 
-2. Place the `Moonquakes.csv` data file and model files (`moonquake_model.joblib`) in the same directory as the source code.
-
-3. Install the necessary dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Ensure the data folder provided in the resources is added to the directory for proper training and testing.
 
 ## Usage
 
 ### Training the Model
 
-1. Add the provided data folder containing `Moonquakes.csv` to the same directory as the training code.
+1. Add the data folder provided in the resources is added to the directory as the training code.
 2. Run the `Training and preparation code.ipynb` notebook to preprocess the data and train the model.
 3. The trained model will be saved as `moonquake_model.joblib`.
 
@@ -70,21 +64,4 @@ The algorithm uses the following steps:
 2. **Fourier Transform**: Converts seismic data into the frequency domain, discarding irrelevant negative frequencies and keeping only the useful data.
 3. **Feature Extraction**: Key features such as max velocity, frequency-weighted velocity, mean velocity, and area under the curve are extracted to reduce data size.
 4. **Classification**: A Random Forest Classifier with boosting is used to classify the seismic events, with a focus on rare cases like shallow quakes.
-
-## Files
-
-- `Moonquakes.csv`: Sample custom training data generated from NASA's Apollo mission data (post feature engineering).
-- `moonquake_model.joblib`: Pretrained Random Forest Classifier model.
-- `Training and preparation code.ipynb`: Notebook containing the source code for training the model.
-- `Testcaseandinputprocess.ipynb`: Notebook containing the final code for testing and predicting seismic events using preprocessed test files.
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
 
